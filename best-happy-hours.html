@@ -7,57 +7,184 @@
 <title>Best Happy Hours in Iowa City | Happy Hour Guide</title>
 <meta name="description" content="Compare fictional Iowa City happy hour deals, including affordable food and drink specials in a student-friendly guide.">
 <style>
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fffaf4;
-  color: #252525;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff9ef;
+  color: #292334;
   line-height: 1.6;
 }
+
 .notice {
-  background: #fff0c4;
-  color: #222;
-  padding: 12px;
+  background: #fff0b3;
+  color: #292334;
+  padding: 12px 18px;
   text-align: center;
   font-size: 13px;
+  font-weight: 500;
 }
+
 header {
-  background: #233b35;
+  background: #ff6385;
   color: white;
-  padding: 35px 20px;
   text-align: center;
+  padding: 55px 20px;
 }
+
+header h1 {
+  font-size: clamp(34px, 6vw, 54px);
+  line-height: 1.1;
+  margin: 0 0 15px;
+  letter-spacing: -1.5px;
+}
+
+header p {
+  font-size: 19px;
+  margin: 0;
+}
+
 nav {
+  background: white;
+  padding: 18px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  background: #e5eee8;
-  padding: 15px;
+  gap: 12px;
+  border-bottom: 3px solid #ffe0a3;
 }
+
 nav a {
-  color: #233b35;
+  color: #d83e66;
+  text-decoration: none;
   font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 25px;
+  background: #fff0f3;
 }
+
+nav a:hover, nav a:focus-visible,
+nav a[aria-current="page"] {
+  background: #ff6385;
+  color: white;
+}
+
 main {
-  max-width: 850px;
+  max-width: 1050px;
   margin: auto;
-  padding: 32px 20px;
+  padding: 35px 20px 65px;
 }
+
+.intro {
+  background: linear-gradient(125deg, #ffb36b, #ffdb8e);
+  padding: 40px 35px;
+  border-radius: 24px;
+  margin-bottom: 35px;
+}
+
+.intro h2 {
+  font-size: clamp(28px, 5vw, 42px);
+  line-height: 1.2;
+  margin: 0 0 15px;
+}
+
+.intro p {
+  max-width: 800px;
+  font-size: 17px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
 .card {
   background: white;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 22px;
-  margin-bottom: 20px;
+  border: 2px solid #f5e7dc;
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: 0 6px 18px rgba(40,20,30,.05);
 }
-h2 { color: #233b35; }
-a { color: #155c54; }
+
+.card:nth-child(1) { border-top: 8px solid #ff6385; }
+.card:nth-child(2) { border-top: 8px solid #ffa24b; }
+.card:nth-child(3) { border-top: 8px solid #b58bdf; }
+
+.card .icon {
+  font-size: 42px;
+}
+
+.card h2 {
+  font-size: 24px;
+  line-height: 1.25;
+  margin: 15px 0;
+}
+
+.card p {
+  margin: 12px 0;
+}
+
+.card strong {
+  color: #c92d5d;
+}
+
+.tag {
+  display: inline-block;
+  background: #fff0f3;
+  color: #b82c58;
+  font-weight: bold;
+  font-size: 13px;
+  border-radius: 20px;
+  padding: 6px 12px;
+  margin-bottom: 8px;
+}
+
+.comparison {
+  background: #f9e7f3;
+  padding: 35px;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+
+.comparison h2 {
+  margin-top: 0;
+  font-size: 30px;
+}
+
+.links {
+  background: white;
+  border: 2px solid #f5e7dc;
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 25px;
+}
+
+.links a {
+  color: #c92d5d;
+  font-weight: bold;
+}
+
 footer {
-  background: #233b35;
+  background: #292334;
   color: white;
-  padding: 25px;
+  padding: 30px 20px;
   text-align: center;
+}
+
+footer .notice {
+  border-radius: 10px;
+  margin: 20px auto 0;
+  max-width: 1000px;
+}
+
+@media (max-width: 800px) {
+  .cards { grid-template-columns: 1fr; }
+  .intro { padding: 30px 22px; }
+  header { padding: 40px 18px; }
+  nav { gap: 8px; }
+  nav a { font-size: 14px; }
 }
 </style>
 </head>
@@ -66,51 +193,72 @@ footer {
 <div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
 
 <header>
-<h1>Best Happy Hours in Iowa City</h1>
-<p>Compare affordable fictional happy hour deals.</p>
+  <h1>Best Happy Hours in Iowa City 🍹</h1>
+  <p>Good deals, good vibes, and plenty of options.</p>
 </header>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="best-happy-hours.html">Best Happy Hours</a>
-<a href="cheap-drinks.html">Cheap Drinks</a>
-<a href="friday-specials.html">Friday Specials</a>
+<nav aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="best-happy-hours.html" aria-current="page">Best Happy Hours</a>
+  <a href="cheap-drinks.html">Cheap Drinks</a>
+  <a href="friday-specials.html">Friday Specials</a>
 </nav>
 
 <main>
-<h2>Find Your Favorite Happy Hour</h2>
-<p>Looking for the best happy hour in Iowa City? This fictional guide compares sample food and drink specials designed for college students and young adults on a budget. All locations, prices, and deals below are invented for this class project.</p>
 
-<div class="card">
-<h2>1. The Downtown Social</h2>
-<p><strong>Happy Hour:</strong> Monday–Friday, 3–6 PM</p>
-<p><strong>Sample Deals:</strong> $4 mocktails, $5 appetizers, and $3 soft drinks.</p>
-<p><strong>Why It Stands Out:</strong> A relaxed atmosphere and affordable options make this fictional location ideal for meeting friends after class.</p>
+<section class="intro">
+  <h2>Find Your Favorite Happy Hour ✨</h2>
+  <p>Looking for the best happy hour in Iowa City? This fictional guide compares sample food and drink specials designed for college students and young adults on a budget. All locations, prices, and deals below are invented for this class project.</p>
+</section>
+
+<div class="cards">
+
+  <article class="card">
+    <div class="icon" aria-hidden="true">🍟</div>
+    <span class="tag">AFTER-CLASS FAVORITE</span>
+    <h2>1. The Downtown Social</h2>
+    <p><strong>Happy Hour:</strong> Monday–Friday, 3–6 PM</p>
+    <p><strong>Sample Deals:</strong> $4 mocktails, $5 appetizers, and $3 soft drinks.</p>
+    <p><strong>Why It Stands Out:</strong> A relaxed atmosphere and affordable options make this fictional location ideal for meeting friends after class.</p>
+  </article>
+
+  <article class="card">
+    <div class="icon" aria-hidden="true">🍸</div>
+    <span class="tag">LATER HAPPY HOUR</span>
+    <h2>2. The Corner Lounge</h2>
+    <p><strong>Happy Hour:</strong> Tuesday–Friday, 4–7 PM</p>
+    <p><strong>Sample Deals:</strong> $5 cocktails, $4 draft beers, and $6 shareable appetizers.</p>
+    <p><strong>Why It Stands Out:</strong> This fictional spot offers a mix of food and drink deals for students planning an evening downtown.</p>
+  </article>
+
+  <article class="card">
+    <div class="icon" aria-hidden="true">🍕</div>
+    <span class="tag">EARLY AFTERNOON DEALS</span>
+    <h2>3. The Hawkeye Hangout</h2>
+    <p><strong>Happy Hour:</strong> Wednesday–Saturday, 2–5 PM</p>
+    <p><strong>Sample Deals:</strong> $3 lemonades, $5 nachos, and $4 drink specials.</p>
+    <p><strong>Why It Stands Out:</strong> This fictional location offers inexpensive food and a casual setting for a group outing.</p>
+  </article>
+
 </div>
 
-<div class="card">
-<h2>2. The Corner Lounge</h2>
-<p><strong>Happy Hour:</strong> Tuesday–Friday, 4–7 PM</p>
-<p><strong>Sample Deals:</strong> $5 cocktails, $4 draft beers, and $6 shareable appetizers.</p>
-<p><strong>Why It Stands Out:</strong> This fictional spot offers a mix of food and drink deals for students planning an evening downtown.</p>
-</div>
+<section class="comparison">
+  <h2>Which Happy Hour Is Best? 💗</h2>
+  <p>The best choice depends on what you're looking for. The Downtown Social has inexpensive appetizers, The Corner Lounge offers later happy hour times, and The Hawkeye Hangout has early afternoon specials.</p>
+  <p>Whether you're comparing prices, looking for a place to meet friends, or planning an afternoon out, these sample locations show how different happy hour options could fit different budgets and schedules.</p>
+</section>
 
-<div class="card">
-<h2>3. The Hawkeye Hangout</h2>
-<p><strong>Happy Hour:</strong> Wednesday–Saturday, 2–5 PM</p>
-<p><strong>Sample Deals:</strong> $3 lemonades, $5 nachos, and $4 drink specials.</p>
-<p><strong>Why It Stands Out:</strong> This fictional location offers inexpensive food and a casual setting for a group outing.</p>
-</div>
+<section class="links">
+  <h2>Keep Exploring ✨</h2>
+  <p>Want to narrow your options? Explore our <a href="cheap-drinks.html">cheap drink specials</a> or check out our <a href="friday-specials.html">Friday happy hour guide</a>.</p>
+  <p><a href="index.html">Return to the Iowa City Happy Hour Guide homepage →</a></p>
+</section>
 
-<h2>Which Happy Hour Is Best?</h2>
-<p>The best choice depends on what you're looking for. The Downtown Social has inexpensive appetizers, The Corner Lounge offers later happy hour times, and The Hawkeye Hangout has early afternoon specials.</p>
-
-<p>Want to narrow your options? Explore our <a href="cheap-drinks.html">cheap drink specials</a> or check out our <a href="friday-specials.html">Friday happy hour guide</a>.</p>
 </main>
 
 <footer>
-<p>Iowa City Happy Hour Guide | Educational Project</p>
-<div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
+  <p>Iowa City Happy Hour Guide | Educational Project</p>
+  <div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
 </footer>
 
 </body>
