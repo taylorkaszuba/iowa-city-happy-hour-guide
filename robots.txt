@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://taylorkaszuba.github.io/iowa-city-happy-hour-guide/sitemap.xml
